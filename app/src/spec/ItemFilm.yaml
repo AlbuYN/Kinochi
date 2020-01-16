@@ -1,0 +1,111 @@
+##
+## KINOCHI REST API - SWAGGER 2 API
+## https://swagger.io/docs/specification/2-0/basic-structure/
+## https://editor.swagger.io/
+##
+
+swagger: '2.0'
+info:
+  title: Kinochi API
+  version: "0.1"
+  description: Kinochi API
+host: api.kinochi.ru
+basePath: /v1
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+paths:
+  /films/:
+    get:
+      tags: [Films]
+      operationId: kinochi.get_films
+      summary: Return a list of films
+      parameters:
+        - in: query
+          name: page
+          description: Page number
+          required: false
+          type: integer
+      responses:
+        200:
+          description: Return list of films
+          schema:
+            type: object
+            properties:
+              films:
+                type: array
+                items:
+                  $ref: '#/definitions/Category'
+
+parameters:
+  uuid:
+    name: uuid
+    description: Film's Unique identifier
+    in: path
+    type: string
+    required: true
+    # pattern: "^[a-zA-Z0-9-]+$"
+
+definitions:
+  Category:
+    type: object
+    properties:
+        id:
+          type: string
+          description: SELECT UUID()
+          example: "7214905b-f8bf-11e8-af4b-000d3a208ac6"
+          readOnly: true
+        name_category:
+            type: string
+            description: Film name in English
+            example: "фильмы/сериалы/мультфильмы"
+            minLength: 0
+            maxLength: 100
+        orientation_image:
+            type: string
+            description: orientation poster image
+            example: "vertical/horizontal"
+            minLength: 0
+            maxLength: 10
+        Films:
+            type: array
+            items:
+              type: object
+              properties:
+                  id:
+                    type: string
+                    description: SELECT UUID()
+                    example: "7214905b-f8bf-11e8-af4b-000d3a208ac6"
+                    readOnly: true
+                  name:
+                      type: string
+                      description: name_film
+                      example: "Веном"
+                      minLength: 0
+                      maxLength: 100
+                  poster_url:
+                      type: string
+                      description: Poster url
+                      example: "http://kinochi.ru/poster.png"
+                      minLength: 0
+                      maxLength: 100
+                  quality:
+                      type: string
+                      description: Film max quality
+                      example: "CamRip"
+                      minLength: 1
+                      maxLength: 15
+
+
+
+
+
+
+
+
+
+
+
+

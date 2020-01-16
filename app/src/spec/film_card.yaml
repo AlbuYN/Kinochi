@@ -1,0 +1,181 @@
+##
+## KINOCHI REST API - SWAGGER 2 API
+## https://swagger.io/docs/specification/2-0/basic-structure/
+## https://editor.swagger.io/
+##
+
+swagger: '2.0'
+info:
+  title: Kinochi API
+  version: "0.1"
+  description: Kinochi API
+host: api.kinochi.ru
+basePath: /v1
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+paths:
+  /film_card/{id}:
+    get:
+      tags: [Film_card]
+      operationId: kinochi.get_film_card
+      summary: Return a card_film of film
+      parameters:
+        - name: id
+          in: path
+          description: id of film card_film
+          required: true
+          type: integer
+      responses:
+        200:
+          description: Return film card_film
+          schema:
+            type: object
+            properties:
+              card_film:
+                type: object
+                items:
+                  $ref: '#/definitions/Film_card'
+
+parameters:
+  uuid:
+    name: uuid
+    description: film card_film's Unique identifier
+    in: path
+    type: string
+    required: true
+    # pattern: "^[a-zA-Z0-9-]+$"
+
+definitions:
+  Film_card:
+    type: object
+    properties:
+      id:
+        type: string
+        description: SELECT UUID()
+        example: "7214905b-f8bf-11e8-af4b-000d3a208ac6"
+        readOnly: true
+      name_en:
+        type: string
+        description: Film name in English
+        example: "Kinochi"
+        minLength: 0
+        maxLength: 100
+      name_ru:
+        type: string
+        description: Film name in Russian
+        example: "Киночи"
+        minLength: 0
+        maxLength: 100
+      poster_url:
+        type: string
+        description: Poster url
+        example: "http://kinochi.ru/poster.png"
+        minLength: 0
+        maxLength: 100
+      rating_kinochi_positive:
+        type: string
+        description: Kinochi internal rating positive
+        example: "1234"
+        minLength: 1
+        maxLength: 10
+      rating_kinochi_negative:
+        type: string
+        description: Kinochi internal rating negative
+        example: "123"
+        minLength: 1
+        maxLength: 10
+      rating_imdb:
+        type: string
+        description: IMDB rating
+        example: "7.2"
+        minLength: 1
+        maxLength: 5
+      rating_kinopoisk:
+        type: string
+        description: Kinopoisk rating
+        example: "8.3"
+        minLength: 1
+        maxLength: 5
+      quality:
+        type: string
+        description: Film max quality
+        example: "CamRip"
+        minLength: 1
+        maxLength: 15
+      update_datetime:
+        type: string
+        description: date
+        example: "7 ДЕК 2018"
+        minLength: 1
+        maxLength: 20
+      date_film:
+        type: string
+        description: date
+        example: "2018"
+        minLength: 1
+        maxLength: 20
+      country:
+        type: string
+        description: film country
+        example: "США/Канада"
+        minLength: 1
+        maxLength: 100
+      genres:
+        type: array
+        items:
+            type: object
+            properties:
+                id:
+                  type: integer
+                  description: enum
+                  example: 1
+                  readOnly: true
+                name:
+                  type: string
+                  description: name genre
+                  example: "Триллер"
+      posters:
+        type: array
+        example: ["http://kinochi.ru/1.jpg","http://kinochi.ru/2.jpg"]
+        items:
+          type: string
+          description: Poster url
+          minLength: 0
+          maxLength: 100
+
+      similar:
+        type: array
+        items:
+            type: object
+            properties:
+                id:
+                  type: string
+                  description: SELECT UUID()
+                  example: "7214905b-f8bf-11e8-af4b-000d3a208ac6"
+                  readOnly: true
+                name:
+                    type: string
+                    description: name_film
+                    example: "Веном"
+                    minLength: 0
+                    maxLength: 100
+                poster_url:
+                    type: string
+                    description: Poster url
+                    example: "http://kinochi.ru/poster.png"
+                    minLength: 0
+                    maxLength: 100
+
+      film_description:
+        type: string
+        description: film description
+        example: "Описание фильма"
+
+      text_of_film_tags:
+        type: string
+        description: html format text contents tags
+        example: "Режиссер <a href='#google'><u>google</u></a> сценарист <a href='http://yandex.ru'><u>yandex</u></a>"
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.internal.ScrimInsetsFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/cvPrimaryNav"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="60dp"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:layout_gravity="top"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/nav_header_desc"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        app:layout_constraintBottom_toTopOf="@+id/ibCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024"
+        app:srcCompat="@drawable/profile_pic" />
+
+    <ImageButton
+        android:id="@+id/ibHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/ibCategory"
+        app:layout_constraintStart_toStartOf="@+id/ibCategory"
+        app:layout_constraintTop_toBottomOf="@+id/ibCategory"
+        app:srcCompat="@drawable/baseline_home_white_24"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/ibCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_category_white_24"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/ibFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/ibHome"
+        app:layout_constraintStart_toStartOf="@+id/ibHome"
+        app:layout_constraintTop_toBottomOf="@+id/ibHome"
+        app:srcCompat="@drawable/baseline_grade_white_24"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/ibProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/ibFavorite"
+        app:layout_constraintStart_toStartOf="@+id/ibFavorite"
+        app:layout_constraintTop_toBottomOf="@+id/ibFavorite"
+        app:srcCompat="@drawable/baseline_person_white_24"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/ibSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="@+id/ibProfile"
+        app:layout_constraintStart_toStartOf="@+id/ibProfile"
+        app:layout_constraintTop_toBottomOf="@+id/ibProfile"
+        app:srcCompat="@drawable/baseline_settings_white_24" />
+</android.support.constraint.ConstraintLayout>
+</android.support.design.internal.ScrimInsetsFrameLayout>

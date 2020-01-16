@@ -1,0 +1,63 @@
+
+    <!-- drawable/fade_fg_rig.xml -->
+<vector
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:aapt="http://schemas.android.com/aapt"
+android:width="36dp"
+android:height="126dp"
+android:viewportWidth="36"
+android:viewportHeight="126"
+    >
+
+<group>
+
+    <clip-path
+        android:pathData="M0 0H36V126H0V0Z"
+        />
+
+    <group
+        android:translateX="0.047"
+        android:translateY="0.48"
+        android:pivotX="18"
+        android:pivotY="63"
+        android:scaleX="1"
+        android:scaleY="1"
+        >
+
+        <path
+            android:pathData="M0 0V126H36V0"
+            >
+
+            <aapt:attr name="android:fillColor">
+
+                <gradient
+                    android:type="linear"
+                    android:startX="9"
+                    android:startY="63"
+                    android:endX="27"
+                    android:endY="63"
+                    >
+
+                    <item
+                        android:color="#0020272B"
+                        android:offset="0"
+                        />
+
+                    <item
+                        android:color="#20272B"
+                        android:offset="1"
+                        />
+
+                </gradient>
+
+            </aapt:attr>
+
+        </path>
+
+    </group>
+
+</group>
+
+</vector>
+
+

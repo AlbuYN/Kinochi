@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout
+    android:id="@+id/action_bar"
+    android:layout_width="match_parent"
+    android:layout_height="227dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+    <net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout
+        android:id="@+id/main.collapsing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        app:contentScrim="?attr/colorPrimary"
+        app:expandedTitleMarginStart="8dp"
+        app:expandedTitleMarginEnd="70dp"
+        app:expandedTitleMarginBottom="2dp"
+        app:expandedTitleTextAppearance="@style/ExpandedAppBar"
+        app:maxLines="2"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_collapseMode="parallax">
+
+            <ImageView
+                android:id="@+id/main.backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/queen" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/holder_film_card_gradient"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cvRatings"
+                android:layout_width="108dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="27dp"
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view">
+
+                <ImageView
+                    android:id="@+id/imageViewKP"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewIMDB"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/kinopoisk" />
+
+                <TextView
+                    android:id="@+id/tvRtKP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewKP"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewKP"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewKP"
+                    tools:text="6.9" />
+
+                <ImageView
+                    android:id="@+id/imageViewIMDB"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/imdb" />
+
+                <TextView
+                    android:id="@+id/tvIMDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewIMDB"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewIMDB"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewIMDB"
+                    tools:text="7.0" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cvKinochi"
+                android:layout_width="53dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/form_rating_element"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/cvRatings">
+
+                <TextView
+                    android:id="@+id/tvKinochiRatingPositive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_kinochi_positive_rating"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="6532" />
+
+                <TextView
+                    android:id="@+id/tvKinochiRatingNegative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_kinochi_negative_rating"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvKinochiRatingPositive"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="342" />
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvUpdateDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="7 ДЕК 2018"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.74" />
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvQuality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+
+                android:background="@color/colorQualityBackground"
+                app:cardBackgroundColor="@color/colorQualityBackground"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvUpdateDate"
+                app:layout_constraintStart_toEndOf="@+id/tvUpdateDate"
+                app:layout_constraintTop_toTopOf="@+id/tvUpdateDate"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/tvQuality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    tools:text="WEB-RIP" />
+
+            </android.support.v7.widget.CardView>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_collapseMode="pin"
+            android:layout_marginTop="24dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
+            />
+    </net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout>
+</android.support.design.widget.AppBarLayout>

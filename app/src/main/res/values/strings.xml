@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">kinochi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="films">Фильмы</string>
+    <string name="new_films">Новинки</string>
+    <string name="tv_series">Сериалы</string>
+    <string name="favorites">Избранное</string>
+    <string name="settings">Настройки</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unable_to_resolve_host">Сервер недоступен, возможно проблема с сетью</string>
+    <string name="title_activity_film_card">FilmCardActivity</string>
+    <string name="description">Описание</string>
+    <string name="video">Видео</string>
+    <string name="trailers">Трейлеры</string>
+    <string name="torrents">Торренты</string>
+    <string name="review">Отзывы</string>
+    <string name="related">Похожее</string>
+    <string name="kinopoisk">Кинопоиск</string>
+    <string name="imdb">IMDB</string>
+    <string name="quality">Качество</string>
+    <string name="play">Запустить</string>
+    <string name="cancel">Отменить</string>
+</resources>

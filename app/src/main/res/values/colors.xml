@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263238</color>
+    <color name="colorPrimaryDark">#747474</color>
+    <color name="colorAccent">#007296</color>
+
+
+    <color name="mainFilter">#85007296</color>
+    <color name="backgroundItemFilter">#2F474F</color>
+    <color name="colorQualityBackground">#009688</color>
+
+    <color name="textGrayLayout">#9E9E9E</color>
+    <color name="colorRatingPositive">#7FCAC3</color>
+    <color name="colorRatingNegative">#F44336</color>
+    <color name="colorBackground">#20272B</color>
+    <color name="colorRatingBackground">#8520272B</color>
+    <color name="color_kinochi_negative_rating">#FFA5C0</color>
+    <color name="color_kinochi_positive_rating">#7AFFF3</color>
+    <color name="color_separator">#37474F</color>
+
+</resources>

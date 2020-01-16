@@ -1,2 +1,2 @@
-# Kinochi
-Демонстрационный проект
+# kinochi-app-android
+
